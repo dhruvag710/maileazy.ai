@@ -1,0 +1,372 @@
+.calendar-container {
+  padding: 16px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 16px auto;
+  height: calc(100vh - 32px);
+  display: flex;
+  flex-direction: column;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.calendar-nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.calendar-nav button {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 8px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #475569;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.calendar-nav button:hover {
+  background: #f1f5f9;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.calendar-nav h2 {
+  margin: 0;
+  color: #1e293b;
+  font-size: 20px;
+  font-weight: 600;
+  min-width: 200px;
+  text-align: center;
+}
+
+.add-event-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.add-event-button:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.add-event-button .material-icons {
+  font-size: 20px;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-bottom: 8px;
+  padding: 0 4px;
+}
+
+.weekday {
+  text-align: center;
+  font-weight: 600;
+  color: #64748b;
+  padding: 8px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  padding: 4px;
+  flex: 1;
+  min-height: 0;
+}
+
+.calendar-day {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 8px;
+  background: white;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.calendar-day:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.calendar-day.empty {
+  background: #f8fafc;
+  border: 1px dashed #e2e8f0;
+  cursor: default;
+}
+
+.calendar-day.empty:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.calendar-day.today {
+  border: 2px solid #3b82f6;
+  background: #eff6ff;
+}
+
+.day-number {
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #1e293b;
+  font-size: 14px;
+}
+
+.today .day-number {
+  color: #3b82f6;
+}
+
+.day-events {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+.day-events::-webkit-scrollbar {
+  width: 4px;
+}
+
+.day-events::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 2px;
+}
+
+.day-events::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 2px;
+}
+
+.event-pill {
+  background: #dbeafe;
+  color: #1e40af;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid #bfdbfe;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.event-pill .event-time {
+  font-size: 10px;
+  color: #3b82f6;
+  font-weight: 500;
+}
+
+.event-pill .event-title {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.event-pill:hover {
+  background: #bfdbfe;
+  transform: translateX(2px);
+}
+
+.calendar-loading {
+  text-align: center;
+  padding: 64px;
+  color: #64748b;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.calendar-loading::before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.calendar-error {
+  text-align: center;
+  padding: 32px;
+  color: #dc2626;
+  background: #fee2e2;
+  border-radius: 12px;
+  margin: 32px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.today-button {
+  background: #eff6ff !important;
+  color: #3b82f6 !important;
+  border-color: #bfdbfe !important;
+}
+
+.today-button:hover {
+  background: #dbeafe !important;
+}
+
+.event-details-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.event-details {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
+
+.event-details .close-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  color: #64748b;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.event-details .close-button:hover {
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.event-details h3 {
+  margin: 0 0 16px 0;
+  color: #1e293b;
+  font-size: 20px;
+  padding-right: 40px;
+}
+
+.event-details .event-time,
+.event-details .event-description,
+.event-details .event-location {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.event-details .material-icons {
+  color: #64748b;
+  font-size: 20px;
+}
+
+.event-details .event-description {
+  white-space: pre-wrap;
+}
+
+@media (max-width: 768px) {
+  .calendar-container {
+    padding: 16px;
+    margin: 16px;
+  }
+
+  .calendar-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .calendar-nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .calendar-nav h2 {
+    font-size: 20px;
+  }
+
+  .calendar-nav button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .add-event-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .calendar-day {
+    min-height: 100px;
+    padding: 8px;
+  }
+
+  .event-pill {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+} 

@@ -1,0 +1,519 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Login page styles */
+.login-container {
+  min-height: 100vh;
+  height: 100vh;
+  position: relative;
+  background: #f8f9fa;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin: 0;
+  width: 100%;
+}
+
+/* AI Elements Animation */
+.ai-element {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.2;
+  filter: brightness(0.9);
+}
+
+.ai-element.circuit {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #1a73e8;
+  border-radius: 10px;
+  background: 
+    linear-gradient(90deg, transparent 50%, #1a73e8 50%),
+    linear-gradient(0deg, transparent 50%, #1a73e8 50%);
+  background-size: 20px 20px;
+  animation: circuitFloat 15s infinite;
+}
+
+.ai-element.brain {
+  font-size: 64px !important;
+  color: #1a73e8;
+  animation: brainFloat 12s infinite;
+}
+
+.ai-element.data {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #1a73e8;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #1a73e8 2px, transparent 2px);
+  background-size: 10px 10px;
+  animation: dataFloat 18s infinite;
+}
+
+.ai-element.neural {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #1a73e8;
+  position: relative;
+  animation: neuralFloat 20s infinite;
+}
+
+.ai-element.neural::before,
+.ai-element.neural::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #1a73e8;
+  border-radius: 50%;
+  animation: neuralPulse 2s infinite;
+}
+
+.ai-element.neural::before {
+  top: 20%;
+  left: 20%;
+}
+
+.ai-element.neural::after {
+  bottom: 20%;
+  right: 20%;
+}
+
+.ai-element.mind {
+  font-size: 48px !important;
+  color: #1a73e8;
+  animation: mindFloat 16s infinite;
+}
+
+.ai-element.network {
+  width: 70px;
+  height: 70px;
+  border: 1.5px solid #1a73e8;
+  transform: rotate(45deg);
+  animation: networkFloat 14s infinite;
+}
+
+@keyframes circuitFloat {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(100px, 50px) rotate(90deg);
+  }
+  50% {
+    transform: translate(50px, 100px) rotate(180deg);
+  }
+  75% {
+    transform: translate(-50px, 50px) rotate(270deg);
+  }
+}
+
+@keyframes brainFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-120px, 80px) scale(1.1);
+  }
+  66% {
+    transform: translate(120px, -50px) scale(0.9);
+  }
+}
+
+@keyframes dataFloat {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(150px, -80px) rotate(120deg);
+  }
+  66% {
+    transform: translate(-100px, -50px) rotate(240deg);
+  }
+}
+
+@keyframes neuralFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  25% {
+    transform: translate(80px, -40px) scale(1.1) rotate(45deg);
+  }
+  50% {
+    transform: translate(-60px, -80px) scale(0.9) rotate(90deg);
+  }
+  75% {
+    transform: translate(-40px, 60px) scale(1.05) rotate(-45deg);
+  }
+}
+
+@keyframes neuralPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(2);
+    opacity: 0.5;
+  }
+}
+
+@keyframes mindFloat {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(-80px, -60px) rotate(-15deg);
+  }
+  66% {
+    transform: translate(100px, 30px) rotate(15deg);
+  }
+}
+
+@keyframes networkFloat {
+  0%, 100% {
+    transform: translate(0, 0) rotate(45deg) scale(1);
+  }
+  25% {
+    transform: translate(60px, -40px) rotate(90deg) scale(1.1);
+  }
+  50% {
+    transform: translate(-40px, -60px) rotate(135deg) scale(0.9);
+  }
+  75% {
+    transform: translate(-60px, 40px) rotate(0deg) scale(1.05);
+  }
+}
+
+/* Animated background patterns */
+.login-container::before,
+.login-container::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.login-container::before {
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(41, 98, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(41, 98, 255, 0.1) 0%, transparent 50%);
+  animation: pulse 8s ease-in-out infinite alternate;
+}
+
+.login-container::after {
+  background-image: 
+    linear-gradient(45deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.05) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.05) 75%);
+  background-size: 100px 100px;
+  animation: backgroundMove 20s linear infinite;
+}
+
+/* Floating particles */
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(50px);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes backgroundMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 500px 500px;
+  }
+}
+
+.login-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 48px 32px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+/* Neural network animation */
+.neural-network {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.1;
+}
+
+.node {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #1a73e8;
+  border-radius: 50%;
+  animation: nodeFloat 4s ease-in-out infinite;
+}
+
+.connection {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #1a73e8, transparent);
+  animation: connectionPulse 2s ease-in-out infinite;
+}
+
+@keyframes nodeFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes connectionPulse {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.logo-section {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  font-size: 40px !important;
+  color: #1a73e8;
+}
+
+.logo-section h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #1a73e8;
+  font-weight: 600;
+}
+
+.welcome-section {
+  margin-bottom: 32px;
+}
+
+.welcome-section h2 {
+  margin: 0 0 8px 0;
+  font-size: 22px;
+  color: #202124;
+  font-weight: 500;
+}
+
+.welcome-section p {
+  margin: 0;
+  color: #5f6368;
+  font-size: 14px;
+}
+
+.google-sign-in-button {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  background: white;
+  color: #202124;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.2s ease;
+  margin: 32px 0;
+}
+
+.google-sign-in-button:hover {
+  background-color: #f8f9fa;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.google-sign-in-button.loading {
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+}
+
+.google-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.button-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #1a73e8;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.features-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid #e8eaed;
+}
+
+.feature {
+  text-align: center;
+}
+
+.feature .material-icons {
+  font-size: 24px;
+  color: #1a73e8;
+  margin-bottom: 8px;
+}
+
+.feature p {
+  margin: 0;
+  color: #5f6368;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* Error message styles */
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(252, 232, 230, 0.9);
+  color: #d93025;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  animation: shake 0.5s ease-in-out;
+  backdrop-filter: blur(5px);
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.error-message .material-icons {
+  font-size: 20px;
+}
+
+.error-message p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 32px 24px;
+    margin: 16px;
+    border-radius: 16px;
+  }
+
+  .features-section {
+    gap: 12px;
+  }
+
+  .logo-section h1 {
+    font-size: 24px;
+  }
+
+  .welcome-section h2 {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,82 @@
+.badge-container {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.category-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.priority-badge {
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.deadline-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 11px;
+  color: #666;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+}
+
+.deadline-badge i {
+  margin-right: 4px;
+}
+
+.deadline-urgent {
+  color: #DC3545;
+  background-color: #FFE5E8;
+  border-color: #FFB8C0;
+}
+
+.deadline-upcoming {
+  color: #FFC107;
+  background-color: #FFF8E5;
+  border-color: #FFE5B1;
+}
+
+.deadline-far {
+  color: #28A745;
+  background-color: #E5F5E9;
+  border-color: #B1E5C1;
+}
+
+/* Hover effects */
+.category-badge:hover,
+.priority-badge:hover {
+  transform: translateY(-1px);
+  transition: transform 0.2s ease;
+}
+
+/* Animation for new badges */
+@keyframes badgeAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.badge-container > * {
+  animation: badgeAppear 0.3s ease-out forwards;
+} 

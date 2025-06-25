@@ -1,0 +1,144 @@
+.email-view {
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.email-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.email-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #2c3e50;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+.email-metadata {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.email-metadata > div {
+  margin-bottom: 5px;
+}
+
+.email-content {
+  margin-bottom: 30px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+/* Analysis Styles */
+.email-analysis {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.email-analysis h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.analysis-section {
+  margin-bottom: 25px;
+}
+
+.analysis-section h4 {
+  color: #4a5568;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.skills-section {
+  margin-bottom: 20px;
+}
+
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.skill-tag {
+  background: #e2e8f0;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+.info-row {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.info-row strong {
+  width: 120px;
+  color: #4a5568;
+}
+
+.projects-section ul,
+.achievements-section ul {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+.projects-section li,
+.achievements-section li {
+  margin-bottom: 8px;
+  color: #4a5568;
+}
+
+.summary-section {
+  background: white;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.summary-section p {
+  color: #2d3748;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.analysis-loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #4a5568;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+} 

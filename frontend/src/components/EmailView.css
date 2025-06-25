@@ -1,0 +1,140 @@
+.email-view {
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
+  background: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.email-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.email-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #2c3e50;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.view-summary-btn,
+.analyze-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.view-summary-btn {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.view-summary-btn:hover {
+  background-color: #357abd;
+}
+
+.analyze-btn {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.analyze-btn:hover {
+  background-color: #27ae60;
+}
+
+.analyze-btn:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7f8c8d;
+  transition: background-color 0.2s;
+}
+
+.close-btn:hover {
+  background-color: #f5f6fa;
+  color: #34495e;
+}
+
+.email-metadata {
+  margin-bottom: 20px;
+  color: #7f8c8d;
+  font-size: 14px;
+}
+
+.email-metadata > div {
+  margin-bottom: 5px;
+}
+
+.email-metadata strong {
+  color: #34495e;
+  margin-right: 10px;
+}
+
+.email-content {
+  line-height: 1.6;
+  color: #2c3e50;
+  white-space: pre-wrap;
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  margin: 10px 0;
+  background-color: #fee2e2;
+  border: 1px solid #ef4444;
+  border-radius: 6px;
+  color: #dc2626;
+}
+
+.error-message .material-icons {
+  font-size: 20px;
+}
+
+.analysis-loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #4a5568;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+} 
